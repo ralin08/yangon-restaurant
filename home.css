@@ -1,0 +1,154 @@
+/* ---- Hero ---- */
+.hero{
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 6rem);
+}
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.hero-copy .eyebrow{ display: block; }
+.hero h1{ font-size: var(--step-h1); margin-bottom: 0.3em; }
+.hero-lede{
+  font-size: 1.15rem;
+  color: var(--charcoal-70);
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+.hero-ctas{ display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.hero-photo{
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(208,90,66,0.07) 0px, rgba(208,90,66,0.07) 1px, transparent 1px, transparent 14px),
+    linear-gradient(160deg, var(--gold) 0%, var(--clay) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(38,32,25,0.08);
+}
+.hero-photo .placeholder-note{
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--charcoal-70);
+  background: rgba(251,247,239,0.85);
+  padding: 0.6em 1.2em;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-photo{ aspect-ratio: 16/10; order: -1; }
+}
+
+/* ---- Welcome ---- */
+.welcome{
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+.welcome h2{ font-size: var(--step-h2); max-width: 12ch; }
+.welcome-body p{
+  font-size: 1.1rem;
+  color: var(--charcoal-70);
+}
+.welcome-body p:first-of-type::first-letter{
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  padding-top: 0.1em;
+  color: var(--terracotta);
+}
+
+@media (max-width: 720px){
+  .welcome{ grid-template-columns: 1fr; }
+  .welcome h2{ max-width: none; }
+}
+
+/* ---- Featured Dishes ---- */
+.dishes-head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.dishes-head h2{ font-size: var(--step-h2); margin: 0; }
+.dishes-head .eyebrow{ margin-bottom: 0.4em; }
+
+.dish-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1.75rem;
+}
+.dish-card{ display: flex; flex-direction: column; }
+.dish-photo{
+  aspect-ratio: 5/4;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(155deg, var(--jade) 0%, rgba(155,202,187,0.35) 100%);
+  border: 1px solid rgba(38,32,25,0.08);
+}
+.dish-card:nth-child(3n+2) .dish-photo{ background: linear-gradient(155deg, var(--gold) 0%, rgba(242,216,167,0.4) 100%); }
+.dish-card:nth-child(3n) .dish-photo{ background: linear-gradient(155deg, var(--clay) 0%, rgba(188,157,130,0.35) 100%); }
+.dish-photo .placeholder-note{
+  position: absolute;
+  bottom: 0.65rem;
+  left: 0.65rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  font-family: var(--font-display);
+  background: rgba(251,247,239,0.85);
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+  color: var(--charcoal-70);
+}
+.dish-name-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+.dish-name{ font-size: 1.2rem; margin: 0; }
+.badge{
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta-d);
+  border: 1px solid var(--terracotta);
+  border-radius: 999px;
+  padding: 0.25em 0.65em;
+}
+.dish-desc{ color: var(--charcoal-70); font-size: 0.97rem; margin: 0; }
+
+@media (max-width: 900px){
+  .dish-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .dish-grid{ grid-template-columns: 1fr; }
+  .dishes-head{ flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
+
+/* ---- CTA strip ---- */
+.cta-strip{
+  background: var(--terracotta);
+  color: var(--paper);
+  text-align: center;
+}
+.cta-strip h2{ font-size: var(--step-h2); color: var(--paper); }
+.cta-strip p{ color: rgba(255,255,255,0.85); max-width: 50ch; margin-inline: auto 1.75rem; margin-bottom: 1.75rem; }
+.cta-strip .hero-ctas{ justify-content: center; }
